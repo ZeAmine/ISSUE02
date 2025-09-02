@@ -1,0 +1,50 @@
+.base-image {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.base-image--fit {
+  height: 100%;
+}
+
+.base-image--fit .base-image-img {
+  height: 100%;
+  object-fit: cover;
+}
+
+.base-image-placeholder {
+  visibility: hidden;
+}
+
+.base-image-img {
+  position: relative;
+  // opacity: 0;
+  // transition: opacity 0.6s cubic-bezier(0.14, 1, 0.34, 1);
+}
+
+// .base-image--loaded .base-image-img {
+//   opacity: 1;
+// }
+
+// ---------------- PARALLAX
+.base-image--parallax {
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+.base-image--parallax .base-image-img {
+  @extend %cover;
+  // height: 120%;
+  object-fit: cover;
+  transform: translate3d(0, 0, 0) scale(1.25);
+  transform-origin: center center;
+  will-change: transform;
+  pointer-events: none;
+}
+
+// ---------------- PLACEHOLDER
+.base-image-placeholder {
+  visibility: hidden;
+}

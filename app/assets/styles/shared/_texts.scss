@@ -1,0 +1,19 @@
+@import '../utils/theme';
+
+%tt-h {
+  @each $size, $value in $fz {
+    &-#{$size} {
+      @include font-base($ff-helvetica, $value, 1.2em);
+      letter-spacing: -0.04em;
+    }
+  }
+}
+
+%tt-a {
+  @each $size, $value in $fz {
+    &-#{$size} {
+      @include font-base($ff-austin, $value, 1.2em);
+      letter-spacing: -0.04em;
+    }
+  }
+}

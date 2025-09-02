@@ -1,0 +1,156 @@
+@use 'sass:list';
+@use 'sass:math';
+
+$z-indexes: ('cursor', 'grid', 'preloader', 'transition', 'navigation', 'canvas', 'main');
+
+@function z($name) {
+  @if list.index($z-indexes, $name) {
+    @return (list.length($z-indexes) - list.index($z-indexes, $name)) + 1;
+  } @else {
+    @warn 'There is no item "#{$name}" in this list; Choose one of: #{$z-indexes}';
+    @return null;
+  }
+}
+
+@function pxToVw($px-value, $viewport-width: 1440px) {
+  @return ($px-value / $viewport-width) * 100vw;
+}
+
+@function pxToVh($px-value, $viewport-height: 800px) {
+  @return ($px-value / $viewport-height) * 100vh;
+}
+
+@function rem($px-value) {
+  @if math.is-unitless($px-value) {
+    @return math.div($px-value, 16) + rem;
+  } @else {
+    @return 'Dont use units when using rem() function, only numbers';
+  }
+}
+
+// Grid Calculation
+$grid-modes: (
+  'none': (
+    gutter: false,
+    margin: false,
+    include-last: false
+  ),
+  'default': (
+    gutter: true,
+    margin: false,
+    include-last: false
+  ),
+  'full': (
+    gutter: true,
+    margin: false,
+    include-last: true
+  ),
+  'margin': (
+    gutter: true,
+    margin: true,
+    include-last: false
+  )
+);
+
+@function parse-modes($mode) {
+  @if type-of($mode) == 'string' {
+    $mode: if(str-index($mode, ' '), $mode, $mode + '');
+    $modes: ();
+    $curr-mode: '';
+    @for $i from 1 through str-length($mode) {
+      $char: str-slice($mode, $i, $i);
+
+      @if $char == ' ' {
+        @if $curr-mode != '' {
+          $modes: append($modes, $curr-mode);
+          $curr-mode: '';
+        }
+      } @else {
+        $curr-mode: $curr-mode + $char;
+      }
+    }
+    @if $curr-mode != '' {
+      $modes: append($modes, $curr-mode);
+    }
+    $combined: map-get($grid-modes, 'default');
+    @each $m in $modes {
+      @if map-has-key($grid-modes, $m) {
+        $mode-options: map-get($grid-modes, $m);
+        @each $key, $value in $mode-options {
+          @if $key == 'margin' and $value == true {
+            $combined: map-merge(
+              $combined,
+              (
+                'margin': true
+              )
+            );
+          }
+          @if $key == 'include-last' and $value == true {
+            $combined: map-merge(
+              $combined,
+              (
+                'include-last': true
+              )
+            );
+          }
+          @if $key == 'gutter' {
+            $combined: map-merge(
+              $combined,
+              (
+                'gutter': $value
+              )
+            );
+          }
+        }
+      }
+    }
+    @return $combined;
+  }
+  @return if(
+    map-has-key($grid-modes, $mode),
+    map-get($grid-modes, $mode),
+    map-get($grid-modes, 'default')
+  );
+}
+
+@function base-col($cols) {
+  @if type-of($cols) != 'number' or $cols < 1 {
+    @error 'Column count must be a positive number, got #{$cols}';
+  }
+
+  @if $cols == 1 {
+    @return 'var(--column)';
+  } @else {
+    @return 'var(--column) * #{$cols}';
+  }
+}
+
+@function add-spacing($base, $cols, $options) {
+  $result: $base;
+  $needs-calc: false;
+
+  @if map-get($options, 'gutter') {
+    $gutter-cols: if(map-get($options, 'include-last'), $cols, $cols - 1);
+    @if $gutter-cols > 0 {
+      $result: '#{$result} + var(--gutter) * #{$gutter-cols}';
+      $needs-calc: true;
+    }
+  }
+
+  @if map-get($options, 'margin') == true {
+    $result: '#{$result} + var(--margin)';
+    $needs-calc: true;
+  }
+
+  @if $needs-calc {
+    @return calc(#{$result});
+  } @else {
+    @return #{$result};
+  }
+}
+
+@function col($cols, $mode: 'default') {
+  $options: parse-modes($mode);
+  $base: base-col($cols);
+  @return add-spacing($base, $cols, $options);
+}

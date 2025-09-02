@@ -1,0 +1,60 @@
+.header {
+  position: fixed;
+  top: var(--margin);
+  left: var(--margin);
+  right: var(--margin);
+  pointer-events: all;
+  z-index: z('navigation');
+}
+
+.header--visible {
+  opacity: 1;
+}
+
+.header--light {
+  color: #f8f8f8;
+}
+
+.header--dark {
+  color: #0b0b0b;
+}
+
+.header--preloader-done {
+  pointer-events: all;
+}
+
+.header-logo {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  cursor: pointer;
+}
+
+.header-logo-icon {
+  width: 2rem;
+  height: auto;
+}
+
+.header-nav {
+  position: absolute;
+  top: -0.2rem;
+  right: 0;
+  display: flex;
+  gap: 1rem;
+}
+
+.header-nav-link {
+  transition: color 300ms $ease-io2;
+  cursor: pointer;
+
+  &:not(:last-child) {
+    margin-right: auto;
+  }
+
+  &.router-link-active {
+    font-weight: $fw-bold;
+    pointer-events: none;
+    cursor: default;
+  }
+}

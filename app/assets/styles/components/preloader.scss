@@ -1,0 +1,31 @@
+.preloader {
+  @extend %cover-fixed;
+  height: 100dvh;
+  color: $cl-black;
+  z-index: z('preloader');
+}
+
+.preloader--done {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.preloader--home {
+  color: $cl-white;
+}
+
+.preloader-number {
+  @extend %tt-h-20;
+  position: absolute;
+  bottom: calc(var(--margin) - 0.4rem);
+  left: var(--margin);
+  letter-spacing: -0.05em;
+}
+
+.preloader-description {
+  @extend %tt-h-24;
+  position: absolute;
+  bottom: calc(var(--gutter) - 0.2rem);
+  left: col(2, 'full margin');
+  width: 55rem;
+}

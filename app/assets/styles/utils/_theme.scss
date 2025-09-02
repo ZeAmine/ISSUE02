@@ -1,0 +1,80 @@
+@use 'sass:math';
+
+/* colors */
+$cl-black: #000000;
+$cl-white: #ffffff;
+$cl-grey: #b2b2b2;
+$cl-light-grey: #dadada;
+
+/** font name */
+$ff-helvetica: 'hnt';
+$ff-austin: 'ac';
+
+/** font sizes */
+$fz: (
+  8: 0.8rem,
+  10: 1rem,
+  12: 1.2rem,
+  14: 1.4rem,
+  16: 1.6rem,
+  18: 1.8rem,
+  20: 2rem,
+  24: 2.4rem,
+  26: 2.6rem,
+  30: 3rem,
+  32: 3.2rem,
+  36: 3.6rem,
+  40: 4rem,
+  48: 4.8rem,
+  64: 6.4rem,
+  72: 7.2rem,
+  96: 9.6rem,
+  128: 12.8rem,
+  142: 14.2rem
+);
+
+/* font weights */
+$fw-light: 300;
+$fw-regular: 400;
+$fw-medium: 500;
+$fw-semibold: 600;
+$fw-bold: 700;
+$fw-extrabold: 800;
+$fw-black: 900;
+
+/* nav */
+$nav-height: 3.4rem;
+
+/* breakpoints */
+$bp-sm: 480px;
+$bp-md: 768px;
+$bp-lg: 1024px;
+$bp-xl: 1280px;
+$bp-xxl: 1920px;
+
+/* easing */
+$ease-o7: cubic-bezier(0.27, 0.92, 0.18, 1);
+$ease-o6: cubic-bezier(0.19, 1, 0.22, 1);
+$ease-o56: cubic-bezier(0.16, 1, 0.3, 1);
+$ease-o5: cubic-bezier(0.23, 1, 0.32, 1);
+$ease-o3: cubic-bezier(0.215, 0.61, 0.355, 1);
+$ease-o2: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+$ease-1: cubic-bezier(0.65, 1, 0.9, 1);
+$ease-2: cubic-bezier(0.5, 1, 0.89, 1);
+$ease-3: cubic-bezier(0.33, 1, 0.68, 1);
+$ease-4: cubic-bezier(0.25, 1, 0.5, 1);
+$ease-5: cubic-bezier(0.22, 1, 0.36, 1);
+$ease-6: cubic-bezier(0.19, 1, 0.22, 1);
+$ease-io1: cubic-bezier(0.37, 0, 0.63, 1);
+$ease-io2: cubic-bezier(0.45, 0, 0.55, 1);
+$ease-io23: cubic-bezier(0.48, 0, 0.52, 1);
+$ease-io3: cubic-bezier(0.65, 0, 0.35, 1);
+$ease-io4: cubic-bezier(0.76, 0, 0.24, 1);
+$ease-io5: cubic-bezier(0.83, 0, 0.17, 1);
+$ease-io6: cubic-bezier(0.87, 0, 0.13, 1);
+$ease-i1: cubic-bezier(0.12, 0, 0.39, 0);
+$ease-i2: cubic-bezier(0.11, 0, 0.5, 0);
+$ease-i3: cubic-bezier(0.32, 0, 0.67, 0);
+$ease-i4: cubic-bezier(0.5, 0, 0.75, 0);
+$ease-i5: cubic-bezier(0.64, 0, 0.78, 0);
+$ease-i6: cubic-bezier(0.7, 0, 0.84, 0);

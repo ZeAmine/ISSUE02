@@ -1,0 +1,53 @@
+.grid {
+  @extend %cover-fixed;
+  @extend %center;
+  opacity: 0.15;
+  pointer-events: none;
+  z-index: z('grid');
+
+  &-wrapper {
+    display: flex;
+    gap: var(--gutter);
+    width: 100%;
+    height: 100%;
+    padding: 0 var(--margin);
+
+    &:before,
+    &:after {
+      content: '';
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: var(--gutter);
+      opacity: 0.6;
+      background-color: #00f;
+      z-index: 2;
+    }
+
+    &:before {
+      top: 0;
+    }
+
+    &:after {
+      bottom: 0;
+    }
+
+    div {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      background: red;
+    }
+
+    @include media-max($bp-lg) {
+      div:nth-child(n + 9) {
+        display: none;
+      }
+    }
+    @include media-max($bp-sm) {
+      div:nth-child(n + 5) {
+        display: none;
+      }
+    }
+  }
+}

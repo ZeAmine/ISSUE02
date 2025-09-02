@@ -1,0 +1,101 @@
+#home {
+  padding-top: 10rem;
+  color: #fff;
+  background-color: #1d1d1d;
+}
+
+.ho-block {
+  position: fixed;
+  top: 10rem;
+  right: var(--margin);
+}
+
+.ho-info {
+  white-space: nowrap;
+  margin-top: 2rem;
+  pointer-events: all;
+
+  h2 {
+    @extend %tt-h-20;
+    margin-top: 0.2rem;
+  }
+
+  p {
+    @extend %tt-h-10;
+  }
+}
+
+.ho-media {
+  position: relative;
+  width: col(3);
+  height: 44rem;
+  opacity: 0;
+}
+
+.home-descriptions {
+  @extend %tt-h-32;
+  width: col(8);
+  margin-right: col(4, 'margin full');
+  margin-left: var(--margin);
+
+  .spacer-h {
+    height: 2rem;
+  }
+
+  .spacer-w {
+    width: 8rem;
+  }
+}
+
+.home-icon {
+  position: fixed;
+  right: var(--gutter);
+  bottom: var(--gutter);
+  width: 4rem;
+  height: 4rem;
+  padding: 16px;
+  margin: -16px;
+  box-sizing: content-box;
+  transition: opacity 1s 600ms cubic-bezier(0.645, 0.045, 0.355, 1);
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+.home-icon-cercle {
+  transition: stroke-dashoffset 0.45s;
+  stroke-dasharray: 110;
+  stroke-dashoffset: 110;
+  transform-box: fill-box;
+  transform-origin: center;
+  transform: rotate(-90deg);
+  stroke: #464646;
+}
+
+.home-icon:hover .home-icon-cercle {
+  stroke-dashoffset: 0;
+}
+
+@include media-max($bp-lg) {
+  .home-descriptions {
+    width: auto;
+    font-size: 2.8rem;
+    margin-right: col(1, 'full margin');
+  }
+}
+
+@include media-max($bp-md) {
+  .home-descriptions {
+    font-size: 3rem;
+    margin-right: col(1, 'margin');
+  }
+}
+
+@include media-max($bp-sm) {
+  .home-descriptions {
+    font-size: 2rem;
+    margin-right: var(--margin);
+  }
+  .home-descriptions .spacer-w {
+    width: 6rem;
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "name": "Hugo Baron — Portfolio",
+  "short_name": "Hugo Baron — Portfolio",
+  "start_url": "/",
+  "display": "fullscreen",
+  "background_color": "#fff",
+  "theme_color": "#fff",
+  "icons": [
+    {
+      "src": "/fav/android-chrome.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}

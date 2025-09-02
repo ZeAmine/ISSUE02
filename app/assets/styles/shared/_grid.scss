@@ -1,0 +1,20 @@
+@import '../utils/theme';
+
+// %base-grid {
+//   display: grid;
+//   grid-template-columns: repeat(theme($mobile, 'columns'), 1fr);
+//   grid-template-rows: 1fr;
+//   column-gap: theme($mobile, 'gap');
+//   width: 100vw;
+//   max-width: 100%;
+//   margin: 0 auto;
+//   padding: 0 theme($mobile, 'gutter');
+//   box-sizing: border-box;
+
+//   @include from('md') {
+//     grid-template-columns: repeat(theme($desktop, 'columns'), 1fr);
+//     grid-template-rows: 1fr;
+//     column-gap: theme($desktop, 'gap');
+//     padding: 0 theme($desktop, 'gutter');
+//   }
+// }

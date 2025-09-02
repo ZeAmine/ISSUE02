@@ -1,0 +1,90 @@
+.base-button {
+  display: inline-flex;
+  pointer-events: all;
+  cursor: pointer;
+
+  &--disabled {
+    opacity: 0.6;
+    pointer-events: none;
+    cursor: not-allowed;
+  }
+
+  &--dark {
+    .base-button-text,
+    .base-button-icon {
+      background-color: $cl-green;
+      color: $cl-black;
+    }
+
+    svg {
+      fill: $cl-black;
+    }
+  }
+
+  &--left {
+    .base-button-text {
+      margin-right: 0;
+      margin-left: 0.3rem;
+    }
+
+    .base-button-icon {
+      transform: translate3d(0, 0, 0);
+    }
+
+    &:hover {
+      .base-button-icon {
+        transform: translate3d(-0.5rem, 0, 0);
+      }
+    }
+  }
+
+  &:not(.base-button--left):hover {
+    .base-button-icon {
+      transform: translate3d(0.5rem, 0, 0);
+    }
+  }
+}
+
+.base-button-text {
+  @extend %tt-a-12;
+  height: 100%;
+  text-transform: uppercase;
+  padding: 0.3rem 0.5rem;
+  margin-right: 0.3rem;
+  border-radius: 2px;
+  background-color: $cl-white;
+
+  &::before {
+    content: '';
+    display: table;
+    margin-bottom: 0.085em;
+  }
+  &::after {
+    content: '';
+    display: table;
+    margin-bottom: -0.2em;
+  }
+}
+
+.base-button-icon {
+  @extend %center;
+  width: 1.76rem;
+  height: 1.76rem;
+  border-radius: 2px;
+  background-color: $cl-white;
+  transform: translate3d(0, 0, 0);
+  transition: transform 0.4s $ease-o6;
+}
+
+// --------------- BREAKPOINTS
+@include media-max($bp-sm) {
+  // .base-button-text {
+  // font-size: 1.2rem;
+  // padding: 0.4rem 0.6rem;
+  // margin-right: 0.5rem;
+  // }
+  // .base-button-icon {
+  // width: 2.18rem;
+  // height: 2.18rem;
+  // }
+}
