@@ -11,12 +11,9 @@ useMetadata({
 <template>
   <Header />
   <main :class="['main', { lenis: isMobile }]">
-    <div class="overlay" />
     <slot />
   </main>
-  <ClientOnly>
-    <Sketch />
-  </ClientOnly>
+  <!-- <Sketch /> -->
   <!-- <Cursor /> -->
   <Preloader />
 </template>

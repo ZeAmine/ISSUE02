@@ -14,7 +14,7 @@ export default defineNuxtPlugin(async () => {
 
         WebFontLoader.load({
           custom: {
-            families: ['hnt:n4,n5,n7', 'ac:n4,i4']
+            families: ['bbmanual:n4,n5', 'meloriac:n4']
           },
           classes: false,
           active: () => {

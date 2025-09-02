@@ -16,12 +16,12 @@
   pointer-events: all;
 
   h2 {
-    @extend %tt-h-20;
+    @extend %bb-20;
     margin-top: 0.2rem;
   }
 
   p {
-    @extend %tt-h-10;
+    @extend %bb-10;
   }
 }
 
@@ -33,7 +33,7 @@
 }
 
 .home-descriptions {
-  @extend %tt-h-32;
+  @extend %bb-32;
   width: col(8);
   margin-right: col(4, 'margin full');
   margin-left: var(--margin);

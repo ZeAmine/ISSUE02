@@ -1,40 +1,24 @@
-/* Helvetica */
+/* BBManualMonoPro */
 @font-face {
-  font-family: 'hnt';
-  src: url('/fonts/HelveticaNowDisplay-Regular.woff2') format('woff2');
+  font-family: 'bbmanual';
+  src: url('/fonts/BBManualMonoPro-Regular.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'hnt';
-  src: url('/fonts/HelveticaNowDisplay-Medium.woff2') format('woff2');
+  font-family: 'bbmanual';
+  src: url('/fonts/BBManualMonoPro-Medium.woff2') format('woff2');
   font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
 
+/* Meloriac */
 @font-face {
-  font-family: 'hnt';
-  src: url('/fonts/HelveticaNowDisplay-Bold.woff2') format('woff2');
-  font-weight: bold;
-  font-style: normal;
-  font-display: swap;
-}
-
-/* Austin Cyr */
-@font-face {
-  font-family: 'ac';
-  src: url('/fonts/AustinCyr-Italic.woff2') format('woff2');
-  font-weight: normal;
-  font-style: italic;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'ac';
-  src: url('/fonts/AustinCyr-Regular.woff2') format('woff2');
+  font-family: 'meloriac';
+  src: url('/fonts/Meloriac-Regular.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
   font-display: swap;

@@ -31,7 +31,7 @@ html {
 }
 
 html {
-  font-family: $ff-helvetica;
+  font-family: $ff-bbmanual;
   font-size: calc(100vw / 1440 * 10);
 
   @include no-scrollbar();
@@ -46,20 +46,10 @@ html {
   @include media-max($bp-sm) {
     font-size: calc(100vw / 480 * 10);
   }
-
-  //font-size: max(8px, min(12px, 0.694vw));
-  //@include media-max($bp-lg) {
-  //  //font-size: max(10px, min(12px, 0.977vw));
-  //  font-size: max(10px, min(12px, var(--text-size)));
-  //}
-  //@include media-max($bp-sm) {
-  //  //font-size: max(10px, min(12px, 1.302vw));
-  //  font-size: max(10px, min(12px, var(--text-size)));
-  //}
 }
 
 body {
-  @extend %tt-h-16;
+  @extend %bb-10;
   color: var(--text-color);
   background-color: var(--bg-color);
 }
@@ -114,7 +104,7 @@ main {
 
 .page-bg {
   color: $cl-black;
-  background: $cl-white;
+  background: $cl-green;
 }
 
 i {

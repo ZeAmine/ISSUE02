@@ -16,7 +16,7 @@ const r = (p: string) => fileURLToPath(new URL(p, import.meta.url))
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: false },
-  ssr: true,
+  ssr: false,
 
   css: ['./app/assets/styles/index.scss'],
 

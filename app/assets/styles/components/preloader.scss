@@ -15,7 +15,7 @@
 }
 
 .preloader-number {
-  @extend %tt-h-20;
+  @extend %bb-20;
   position: absolute;
   bottom: calc(var(--margin) - 0.4rem);
   left: var(--margin);
@@ -23,7 +23,7 @@
 }
 
 .preloader-description {
-  @extend %tt-h-24;
+  @extend %bb-24;
   position: absolute;
   bottom: calc(var(--gutter) - 0.2rem);
   left: col(2, 'full margin');
