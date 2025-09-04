@@ -6,7 +6,7 @@ interface RouteTheme {
 }
 
 export const ROUTE_THEMES: Record<string, string> = {
-  [ROUTES.HOME]: 'light',
+  [ROUTES.HOME]: 'dark',
   [ROUTES.ABOUT]: 'dark',
   [ROUTES.WORKS]: 'dark',
   [ROUTES.WORK]: 'light'

@@ -65,5 +65,14 @@ onUnmounted(() => {
         'header--preloader-done': isPreloaderDone
       }
     ]"
-  ></header>
+  >
+    <div class="header-credit st-l">
+      ©2025 AMINE ZEGMOU <br />
+      ALL RIGHTS RESERVED
+    </div>
+    <div class="header-contact st-l st-1">
+      Available Sept. 2025 <br />
+      <a href="mailto:amine.zegmou@gmail.com">zegmou.amine@gmail.com</a>
+    </div>
+  </header>
 </template>

@@ -1,7 +1,8 @@
+import { TransitionManager } from '@webgl/controllers/TransitionManager'
+
 import type { RouteLocationNormalized } from 'vue-router'
 
 import { eventEmitter } from '@/utils/EventEmitter'
-import { TransitionManager } from '@webgl/controllers/TransitionManager'
 
 interface IRouteTransitionProps {
   to: RouteLocationNormalized
@@ -13,16 +14,14 @@ interface IRouteTransitionProps {
 }
 
 export default defineNuxtRouteMiddleware((to, from) => {
-  const transitionType = useTransitionType()
-  const { isProjectRoute } = useTransitionGuard()
-
-  if (isProjectRoute(to, from)) {
-    transitionType.value = 'case-next'
-    return caseNextTransition({ to, from })
-  }
-
-  transitionType.value = 'page'
-  return defaultTransition({ to, from })
+  // const transitionType = useTransitionType()
+  // const { isProjectRoute } = useTransitionGuard()
+  // if (isProjectRoute(to, from)) {
+  //   transitionType.value = 'case-next'
+  //   return caseNextTransition({ to, from })
+  // }
+  // transitionType.value = 'page'
+  // return defaultTransition({ to, from })
 })
 
 function caseNextTransition({ to, from }: IRouteTransitionProps) {

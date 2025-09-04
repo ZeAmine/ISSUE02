@@ -1,7 +1,8 @@
 <script setup lang="ts">
-import { Preloader } from '@webgl/_preloader'
-import { Text } from '@/animations/texts'
 import { checkTween } from '@vendor/checkTween'
+import { Preloader } from '@webgl/_preloader'
+
+import { Text } from '@/animations/texts'
 
 const route = useRoute()
 const router = useRouter()

@@ -1,4 +1,5 @@
 import WebFontLoader from 'webfontloader'
+
 import { eventEmitter } from '@/utils/EventEmitter'
 
 export default defineNuxtPlugin(async () => {
@@ -14,7 +15,7 @@ export default defineNuxtPlugin(async () => {
 
         WebFontLoader.load({
           custom: {
-            families: ['bbmanual:n4,n5', 'meloriac:n4']
+            families: ['bbmanual:n5,n7', 'meloriac:n4']
           },
           classes: false,
           active: () => {

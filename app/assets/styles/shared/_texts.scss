@@ -3,7 +3,7 @@
 %bb {
   @each $size, $value in $fz {
     &-#{$size} {
-      @include font-base($ff-bbmanual, $value, 1.2em);
+      @include font-base($ff-bbmanual, $value, 1.1em);
       letter-spacing: -0.03em;
     }
   }
@@ -12,7 +12,19 @@
 %mr {
   @each $size, $value in $fz {
     &-#{$size} {
-      @include font-base($ff-meloriac, $value, 1.2em);
+      @include font-base($ff-meloriac, $value, 1.1em);
+      letter-spacing: 0.005em;
+
+      &:is([class*='l_'], h1, h2, h3, h4, h5, h6, p, span, div)::before {
+        content: '';
+        display: table;
+        margin-bottom: calc(-0.5lh + 0.37em);
+      }
+      &:is([class*='l_'], h1, h2, h3, h4, h5, h6, p, span, div)::after {
+        content: '';
+        display: table;
+        margin-bottom: calc(-0.5lh + 0.5em);
+      }
     }
   }
 }

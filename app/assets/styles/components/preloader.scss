@@ -3,6 +3,7 @@
   height: 100dvh;
   color: $cl-black;
   z-index: z('preloader');
+  opacity: 0;
 }
 
 .preloader--done {

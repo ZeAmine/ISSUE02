@@ -50,8 +50,6 @@ html {
 
 body {
   @extend %bb-10;
-  color: var(--text-color);
-  background-color: var(--bg-color);
 }
 
 @include media-max($bp-sm) {
@@ -103,8 +101,18 @@ main {
 }
 
 .page-bg {
-  color: $cl-black;
-  background: $cl-green;
+  color: var(--text-color);
+  background-color: var(--bg-color);
+  transition: all 200ms $ease-o2;
+
+  .home-item-badge {
+    border-color: var(--text-color);
+  }
+
+  .home-preview-icon polygon {
+    fill: var(--text-color);
+    transition: fill 200ms $ease-o2;
+  }
 }
 
 i {
